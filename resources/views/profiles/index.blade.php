@@ -4,23 +4,23 @@
 <div class="container px-5">
     <div class="row">
         <div class="col-4 p-3 text-center">
-        <img src="{{ $user->profile->image ? url('/storage/') . '/' . $user->profile->image : url('/img/default-profile-pic.jpg')}}" class="rounded-circle"
-                style="width:200px; height:200px; border:3px solid lightgray; object-fit:cover">
+            <img src="{{ $user->profile->image ? url('/storage/') . '/' . $user->profile->image : url('/img/default-profile-pic.jpg')}}"
+                class="rounded-circle" style="width:200px; height:200px; border:3px solid lightgray; object-fit:cover">
         </div>
         <div class="col-8 pt-3">
             <div class="d-flex justify-content-between align-items-baseline">
                 <div class="d-flex align-middle">
                     <h2>{{ $user->username }}</h2>
-                    <div class="btn btn-primary ml-4 h-75">Follow</div>
+                    <follow-button user-id="{{ $user->id }}"></follow-button>
                 </div>
 
                 @can('update', $user->profile)
-                    <a href="{{ url('/') }}/post/create">Add New Post</a>
+                <a href="{{ url('/') }}/post/create">Add New Post</a>
                 @endcan
             </div>
 
             @can('update', $user->profile)
-                <a href="{{ url('/profile/') }}/{{ $user->id }}/edit">Edit Profile</a>
+            <a href="{{ url('/profile/') }}/{{ $user->id }}/edit">Edit Profile</a>
             @endcan
 
             <div class="d-flex">
