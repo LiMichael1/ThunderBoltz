@@ -7,13 +7,15 @@ use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
 {
-    public function index(\App\User $user)
+    public function show(\App\User $user)
     {
         $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
 
-        // dd($follows);
+        $posts = $user->posts;
+        $followersCount = $user->profile->followers->count();
+        $followingCount = $user->following->count();
 
-        return view('profiles.index', compact('user', 'follows') );
+        return view('profiles.show', compact('user', 'follows', 'posts', 'followersCount', 'followingCount') );
     }
 
     public function edit(\App\User $user)

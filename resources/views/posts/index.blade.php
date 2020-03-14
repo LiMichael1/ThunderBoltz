@@ -14,8 +14,9 @@
         <div class="row col-10 offset-1 align-items-start">
             <div class="col-4 border-right">
                 <div class="row pl-3 mb-2">
+                <h2>{{ $post->user->image }}</h2>
                     <a class="row justify-content-center" style="text-decoration:none;" href="{{ url('/profile/') }}/{{ $post->user->id  }}">
-                        <img src="{{  $post->user->image ?  url('/storage/') . '/' . $post->user->image : url('/') . '/img/default-profile-pic.jpg' }}"
+                        <img src="{{  $post->user->profile->image ?  url('/storage/') . '/' . $post->user->profile->image : url('/') . '/img/default-profile-pic.jpg' }}"
                             alt="" class="rounded-circle" width="50px" height="50px">
                         <div class="text-dark ml-2" style="align-self: center;">{{ $post->user->username }}</div>
                     </a>
