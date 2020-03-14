@@ -18,14 +18,14 @@
         },
         methods: {
             followUser( e ){
-                axios.post( this.appUrl + '/public/follow/' + this.userId )
+                axios.post( this.appUrl + '/follow/' + this.userId )
                     .then( response => {
                         this.status = response.data ? true : false;
                         console.log(response.data)
                     })
                     .catch( error => {
                         if( error.response.status == 401 ){
-                            window.location = this.appUrl + '/public/login/'; 
+                            window.location = this.appUrl + '/login/'; 
                         }
                         console.log(error);
                     } )

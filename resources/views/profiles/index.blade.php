@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container px-5">
-    <div class="row">
-        <div class="col-4 p-3 text-center">
+    <div class="row align-items-start">
+        <div class="col-4 p-3 embed-responsive embed-responsive-1by1 text-center  d-flex justify-content-center align-items-start">
             <img src="{{ $user->profile->image ? url('/storage/') . '/' . $user->profile->image : url('/img/default-profile-pic.jpg')}}"
-                class="rounded-circle" style="width:200px; height:200px; border:3px solid lightgray; object-fit:cover">
+                class="rounded-circle embed-responsive-item" style="border:3px solid lightgray; object-fit:cover">
         </div>
         <div class="col-8 pt-3">
             <div class="d-flex justify-content-between align-items-baseline">
@@ -46,12 +46,7 @@
                     style="object-fit: cover">
             </a>
         </div>
-
         @endforeach
-
-        {{-- <div class="col-4 p-2"><a href="#"><img src="https://placeimg.com/250/251/any" alt="" class="w-100"></a></div>
-        <div class="col-4 p-2"><a href="#"><img src="https://placeimg.com/251/250/any" alt="" class="w-100"></a></div>
-        <div class="col-4 p-2"><a href="#"><img src="https://placeimg.com/250/252/any" alt="" class="w-100"></a></div> --}}
     </div>
 </div>
 @endsection
