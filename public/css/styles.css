@@ -1,0 +1,173 @@
+body {
+    background: linear-gradient( #2a0845 ,  #6441A5 ) no-repeat fixed;
+    color: white;
+}
+
+.nav-bar-bg {
+    background-color: #6441A5!important;
+    text-shadow: 0 0 10px #fff;
+}
+
+.header-text {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+    color: white;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.image-overlay{
+    /* border-radius: 30px; */
+    cursor: pointer;
+    opacity: 0.6; 
+    width: 91%;
+    height: 89%;
+    position: absolute;
+    transition: .3s;
+}
+
+.image-overlay .icon-pos {
+    color: white;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-overlay:hover .icon-pos {
+    opacity: 1;
+}
+  
+.image-overlay:hover{
+    background-color: #000000;
+    box-shadow: 0 0 15px 5px rgb(39, 1, 255);
+}
+
+.image-border{
+    border-radius: 30px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.image-div {
+    height: 200px;
+    overflow: hidden;
+}
+
+/* Profile picture */
+.profile-pic {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.profile-pic-overlay {
+    cursor: pointer;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .3s;
+}
+
+.profile-pic-overlay:hover {
+    background-color: #000000;
+}
+
+.profile-pic-overlay .caption {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-pic-overlay:hover .caption {
+    opacity: 1;
+}
+
+/* Glowing Button */
+.glow-button {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    color: rgb(230, 0, 120);
+    background-color: transparent;
+    border-radius: 10px;
+    border: 3px solid rgb(0, 180, 230);
+    font-weight: bold;
+    
+}
+  
+.glow-button:hover {
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
+      0 0 12px -1px rgb(0, 180, 230) inset;
+    text-shadow: 0 0 15px rgb(230, 0, 120), 0 0 25px rgb(230, 0, 120);
+    text-decoration: none;
+    color: rgb(230, 0, 120);
+}
+
+.neon-white-text {
+    color: #fff!important;
+    /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff073a, 0 0 40px #ff073a, 0 0 50px #ff073a, 0 0 60px #ff073a, 0 0 70px #ff073a; */
+    text-shadow: 0 0 10px #fff, 0 0 10 #fff;
+}
+
+
+
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4666FF, 0 0 40px #4666FF, 0 0 50px #4666FF, 0 0 60px #4666FF, 0 0 70px #4666FF;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #4666FF, 0 0 40px #4666FF, 0 0 50px #4666FF, 0 0 60px #4666FF, 0 0 70px #4666FF, 0 0 80px #4666FF;
+    }
+}
+
+.username-text {
+    color: #4666FF;
+    text-shadow: 0 0 10px #4666FF, 0 0 20px #4666FF, 0 0 30px #4666FF;
+    font-family: 'Rock Salt', cursive;
+}
+
+.quicksand {
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+
+
+.dropdown-item {
+    background-color: #6441A5!important;
+    color: #fff!important;
+
+}
+
+.icon-white {
+    filter: brightness(0) invert(1);
+}
+
+.auto-overflow {
+    overflow: auto;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .col-4 {
+      flex: 50%;
+      max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .col-4 {
+      flex: 100%;
+      max-width: 100%;
+    }
+}
+
+.post-image {
+    overflow: hidden;
+}
