@@ -2,7 +2,10 @@
 
 @section('content')
 <div class="container">
-    @foreach($posts as $post)
+    <div class="row">
+        <h1>Followed Users Posts</h1>
+    </div>
+    @forelse($posts as $post)
     <div class="row my-4">
         <div class="col-10 offset-1">
             <a href="{{ url('/post/') . '/' . $post->id }}">
@@ -14,8 +17,9 @@
         <div class="row col-10 offset-1 align-items-start">
             <div class="col-4 border-right">
                 <div class="row pl-3 mb-2">
-                <h2>{{ $post->user->image }}</h2>
-                    <a class="row justify-content-center" style="text-decoration:none;" href="{{ url('/profile/') }}/{{ $post->user->id  }}">
+                    <h2>{{ $post->user->image }}</h2>
+                    <a class="row justify-content-center" style="text-decoration:none;"
+                        href="{{ url('/profile/') }}/{{ $post->user->id  }}">
                         <img src="{{  $post->user->profile->image ?  url('/storage/') . '/' . $post->user->profile->image : url('/') . '/img/default-profile-pic.jpg' }}"
                             alt="" class="rounded-circle" width="50px" height="50px">
                         <div class="text-dark ml-2" style="align-self: center;">{{ $post->user->username }}</div>
@@ -52,12 +56,16 @@
             </div>
 
         </div>
-</div>
-@endforeach
-<div class="row">
-    <div class="col-12 d-flex justify-content-center">
-        {{ $posts->links() }}
     </div>
-</div>
+    @empty
+        <div class="row">
+            <p>You do not follow any profiles</p>
+        </div>
+    @endforelse
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            {{ $posts->links() }}
+        </div>
+    </div>
 </div>
 @endsection

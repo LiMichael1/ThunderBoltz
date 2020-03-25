@@ -62,12 +62,21 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right nav-bar-bg" aria-labelledby="navbarDropdown">
+                                    <a href="{{ url('/home') }}" class="dropdown-item">
+                                        Posts Timeline
+                                    </a>
+                                    <a href="{{ url('/profile/') . '/' . Auth::user()->id }}" class="dropdown-item">
+                                        My Profile
+                                    </a>
+                                    <a href="{{ url('/users') }}" class="dropdown-item">
+                                        Users List
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

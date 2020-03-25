@@ -18,6 +18,45 @@ class ProfilesController extends Controller
         return view('profiles.show', compact('user', 'follows', 'posts', 'followersCount', 'followingCount') );
     }
 
+    public function index()
+    {
+        $users_query = \App\User::with([
+            'profile.followers',
+            'following',
+            'posts'
+        ])->paginate(5);
+
+        // collect($users)->map(function ( $user ){
+        //     $user->profile['followers'] = $user->profile->followers->count();
+        //     $user['posts'] = $user->posts->count();
+
+        //     return $user;
+        // });
+
+        $users = [];
+
+        foreach($users_query as $query_obj)
+        {
+            $user = [];
+            $user['id'] = $query_obj->id;
+            $user['username'] = $query_obj->username;
+            $user['profile']['image'] = $query_obj->profile->image;
+            $user['profile']['title'] = $query_obj->profile->title;
+            $user['profile']['description'] = $query_obj->profile->description;
+            $user['profile']['url'] = $query_obj->profile->url;
+            $user['followers_count'] = $query_obj->profile->followers->count();
+            $user['post_count'] = $query_obj->posts->count();
+            $user['following_count'] = $query_obj->following->count();
+            $user['followed'] = $query_obj->profile->followers->contains('id', auth()->user() ? auth()->user()->id : -1 );
+
+            array_push($users, $user);
+        }
+
+        // dd($users_query->links());
+
+        return view( 'profiles.index', compact('users', 'users_query') );
+    }
+
     public function edit(\App\User $user)
     {
         $this->authorize('update', $user->profile);

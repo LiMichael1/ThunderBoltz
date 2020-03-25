@@ -23,11 +23,12 @@ Route::post('/follow/{user}', 'FollowsController@store');
 
 Route::get('/home', 'PostsController@index');
 
-Route::get('/post/create', 'PostsController@create');
 Route::post('/post', 'PostsController@store');
+Route::get('/post/create', 'PostsController@create');
 Route::get('/post/{post}', 'PostsController@show');
 
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 Route::get('/profile/{user}', 'ProfilesController@show')->name('profile.show');
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
 
+Route::get('/users', 'ProfilesController@index')->name('profile.index');
