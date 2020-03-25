@@ -65,7 +65,7 @@
                         </div>
                         <div class="d-flex">
                             <div class="mx-1">
-                                ###
+                                {{ $post->comments->count() }}
                             </div>
                             <div class="mx-1">
                                 <i class="far fa-comments"></i>

@@ -23,6 +23,8 @@ Route::post('/follow/{user}', 'FollowsController@store');
 
 Route::get('/home', 'PostsController@index');
 
+Route::post('/comment', 'CommentsController@store');
+
 Route::post('/post', 'PostsController@store');
 Route::get('/post/create', 'PostsController@create');
 Route::get('/post/{post}', 'PostsController@show');

@@ -4,17 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Comment extends Model
 {
-    protected $guarded = [];
+    //
+    protected $fillable = ['user_id', 'post_id', 'body'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function comments()
+    public function post()
     {
-        return $this->hasMany(Comment::class)->orderBy('created_at', 'DESC');
+        return $this->belongsTo(Post::class);
     }
 }

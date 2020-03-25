@@ -21,7 +21,7 @@
                 <div class="d-flex align-middle">
                     <a href="{{ url('/profile/') . '/' . $user['id'] }}" style="text-decoration: none;"
                         class="text-dark">
-                        <h2>{{ $user['username'] }}</h2>
+                        <h2 class="username-text">{{ $user['username'] }}</h2>
                     </a>
                     <follow-button user-id="{{ $user['id'] }}" follows="{{ $user['followed'] }}"></follow-button>
                 </div>

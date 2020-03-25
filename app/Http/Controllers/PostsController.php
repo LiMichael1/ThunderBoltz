@@ -50,7 +50,7 @@ class PostsController extends Controller
     public function show(\App\Post $post)
     {
 
-        $post = $post->with('user.profile')->where('id', $post->id)->first();
+        $post = $post->with('user.profile', 'comments.user')->where('id', $post->id)->first();
         $follows = (auth()->user()) ? auth()->user()->following->contains($post->user->id) : false;
         
         return view('posts.show', compact('post', 'follows'));

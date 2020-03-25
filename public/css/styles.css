@@ -171,3 +171,9 @@ body {
 .post-image {
     overflow: hidden;
 }
+
+.com-usr {
+    color: blue;
+    text-shadow: 0 0 15px blue, 0 0 10px blue; 
+    font-family: Quicksand;
+}

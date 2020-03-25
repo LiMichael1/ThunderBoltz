@@ -36,6 +36,23 @@
 
             </div>
             <p>{{ $post->caption }}</p>
+
+            @foreach($post->comments as $comment)
+                <p class="d-block">
+                    <strong class="mr-4 com-usr">{{ $comment->user->username }}</strong>
+                    {{ $comment->body }}
+                </p>
+            @endforeach
+            <form action="{{url('/')}}/comment" enctype="multipart/form-data" method="POST">
+                @csrf
+                <div class="form-group">
+                    <textarea class="form-control" name="body"></textarea>
+                    <input type="hidden" name="post_id" value="{{ $post->id }}"/>
+                </div>
+                <div class="form=group">
+                    <input type="submit" class="btn btn-primary" value="Add Comment">
+                </div>
+            </form>
         </div>
     </div>
 </div>
