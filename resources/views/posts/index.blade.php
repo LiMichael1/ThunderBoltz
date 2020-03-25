@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="row mb-4">
-        <div class="row col-10 offset-1 align-items-start">
+        <div class="row col-10 offset-1 align-items-start mb-5">
             <div class="col-4 border-right">
                 <div class="row pl-3 mb-2">
                     <h2>{{ $post->user->image }}</h2>
@@ -22,36 +22,31 @@
                         href="{{ url('/profile/') }}/{{ $post->user->id  }}">
                         <img src="{{  $post->user->profile->image ?  url('/storage/') . '/' . $post->user->profile->image : url('/') . '/img/default-profile-pic.jpg' }}"
                             alt="" class="rounded-circle" width="50px" height="50px">
-                        <div class="text-dark ml-2" style="align-self: center;">{{ $post->user->username }}</div>
+                        <div class="text-primary ml-2" style="align-self: center;"><strong>{{ $post->user->username }}</strong></div>
                     </a>
                 </div>
                 <div class="d-flex flex-wrap">
                     <div class="d-flex">
                         <div class="mx-1">
-                            <img src="{{url('/svg/donut-mini.svg')}}" width="25px" alt="">
+                            <a href="#">{{ $post->likes->count() }}</a>
                         </div>
                         <div class="mx-1">
-                            <a href="#">Yum</a>
+                            <img src="{{url('/svg/transparent-donut.svg')}}" width="25px" alt="" class="icon-white">
                         </div>
                     </div>
                     <div class="d-flex">
                         <div class="mx-1">
-                            <i class="far fa-comments"></i>
+                            <a href="#">{{ $post->comments->count() }}</a>
                         </div>
                         <div class="mx-1">
-                            <a href="#">Comment</a>
-                        </div>
+                            <i class="far fa-comments"></i>
+                        </div>  
                     </div>
 
                 </div>
             </div>
             <div class="col-8">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia omnis distinctio saepe, id sequi
-                    deserunt quod repellat magni odit dolorum molestias iusto officia, eos repellendus reiciendis nobis
-                    non quam inventore necessitatibus nulla, quibusdam suscipit accusantium? Esse quidem nemo non minus
-                    maxime ratione eaque atque repudiandae hic, modi placeat quas officia.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit praesentium quod fugiat dolorum
-                    repellat! Minima alias beatae blanditiis perspiciatis eos?</p>
+                
                 <p>{{ $post->caption }}</p>
             </div>
 

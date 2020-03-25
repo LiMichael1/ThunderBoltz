@@ -19,23 +19,42 @@
             <div class="d-flex flex-wrap border-bottom pb-2">
                 <div class="d-flex">
                     <div class="mx-1">
-                        <img src="{{url('/svg/transparent-donut.svg')}}" width="25px" alt="" class="icon-white">
+                        <a href="#"> {{ $likes_count }}</a>
                     </div>
                     <div class="mx-1">
-                        <a href="#">Yum</a>
+                        <!-- <img src="{{url('/svg/transparent-donut.svg')}}" width="25px" alt="" class="icon-white"> -->
+                        <like-button post-id="{{ $post->id }}" liked="{{ $liked_post }}"></like-button>
                     </div>
+                    
                 </div>
                 <div class="d-flex">
                     <div class="mx-1">
-                        <i class="far fa-comments"></i>
+                        <a href="#">{{ $comments_count }}</a>
                     </div>
                     <div class="mx-1">
-                        <a href="#">Comment</a>
+                        <i class="far fa-comments"></i>
                     </div>
                 </div>
 
             </div>
             <p>{{ $post->caption }}</p>
+
+            @foreach($post->comments as $comment)
+                <p class="d-block">
+                    <strong class="mr-4 com-usr">{{ $comment->user->username }}</strong>
+                    {{ $comment->body }}
+                </p>
+            @endforeach
+            <form action="{{url('/')}}/comment" enctype="multipart/form-data" method="POST">
+                @csrf
+                <div class="form-group">
+                    <textarea class="form-control" name="body"></textarea>
+                    <input type="hidden" name="post_id" value="{{ $post->id }}"/>
+                </div>
+                <div class="form=group">
+                    <input type="submit" class="btn btn-primary" value="Add Comment">
+                </div>
+            </form>
         </div>
     </div>
 </div>
