@@ -8,6 +8,11 @@ body {
     text-shadow: 0 0 10px #fff;
 }
 
+.land-logo {
+    margin-top: 30px;
+    padding-top: 0px;
+}
+
 .header-text {
     font-family: 'Permanent Marker', cursive;
     font-size: 1.5rem;
@@ -15,6 +20,15 @@ body {
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4666FF, 0 0 40px #4666FF, 0 0 50px #4666FF, 0 0 60px #4666FF, 0 0 70px #4666FF;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #4666FF, 0 0 40px #4666FF, 0 0 50px #4666FF, 0 0 60px #4666FF, 0 0 70px #4666FF, 0 0 80px #4666FF;
+    }
 }
 
 .image-overlay{
@@ -115,17 +129,6 @@ body {
     text-shadow: 0 0 10px #fff, 0 0 10 #fff;
 }
 
-
-
-@-webkit-keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4666FF, 0 0 40px #4666FF, 0 0 50px #4666FF, 0 0 60px #4666FF, 0 0 70px #4666FF;
-    }
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #4666FF, 0 0 40px #4666FF, 0 0 50px #4666FF, 0 0 60px #4666FF, 0 0 70px #4666FF, 0 0 80px #4666FF;
-    }
-}
-
 .username-text {
     color: #4666FF;
     text-shadow: 0 0 10px #4666FF, 0 0 20px #4666FF, 0 0 30px #4666FF;
@@ -212,3 +215,4 @@ body {
 .home-image{
     border-radius: 40px!important;
 }
+
