@@ -1,9 +1,7 @@
 # Foodies
+![Foodies](https://github.com/LiMichael1/ThunderBoltz/blob/master/resources/img/Screenshot.png?raw=true)
 
 Foodies is an Instagram like social media platform for sharing our favorite eats. Foodies is built using the Laravel framework.
-
-![Foodies]
-(https://github.com/LiMichael1/ThunderBoltz/blob/master/resources/img/Screenshot.png?raw=true)
 
 ## Requirements
 
@@ -20,7 +18,7 @@ Foodies is an Instagram like social media platform for sharing our favorite eats
 
 Edit the .env file with your MySQL DB settings
 
-##Run the project
+## Run the project
 
 >php artisan serve  
 
