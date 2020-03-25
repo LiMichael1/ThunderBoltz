@@ -57,7 +57,7 @@
                     <div class="d-flex icon-pos">
                         <div class="d-flex">
                             <div class="mx-1">
-                                ###
+                                {{ $post->likes->count() }}
                             </div>
                             <div class="mx-1">
                                 <img src="{{url('/svg/transparent-donut.svg')}}" width="25px" alt="" class="icon-white">

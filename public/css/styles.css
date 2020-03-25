@@ -177,3 +177,38 @@ body {
     text-shadow: 0 0 15px blue, 0 0 10px blue; 
     font-family: Quicksand;
 }
+
+
+/* BUTTONS */
+.blank-donut {
+    background-image: url('../svg/transparent-donut.svg');
+    background-size: cover;
+    background-color: transparent;
+    filter: brightness(0) invert(1);
+    border: none;
+    width: 25px;
+    height: 25px;
+}
+
+.pink-donut {
+    background-image: url('../svg/like-donut.svg');
+    background-size: cover;
+    background-color: transparent;
+    filter: invert(0);
+    border: none;
+    width: 25px; 
+    height: 25px; 
+}
+
+.blank-donut:focus, .pink-donut:focus {
+    outline: none;
+}
+
+.user-bg{
+    background-color: #8A2BE2		;
+    box-shadow: 0 0 15px 5px #fff, 0 0 15px 10px #8A2BE2;
+}
+
+.home-image{
+    border-radius: 40px!important;
+}

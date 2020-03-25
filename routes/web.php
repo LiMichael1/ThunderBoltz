@@ -19,11 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::post('/like/{post}', 'LikesController@store');
+
+Route::post('/comment', 'CommentsController@store');
 Route::post('/follow/{user}', 'FollowsController@store');
 
 Route::get('/home', 'PostsController@index');
 
-Route::post('/comment', 'CommentsController@store');
 
 Route::post('/post', 'PostsController@store');
 Route::get('/post/create', 'PostsController@create');

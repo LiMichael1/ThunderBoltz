@@ -19,18 +19,20 @@
             <div class="d-flex flex-wrap border-bottom pb-2">
                 <div class="d-flex">
                     <div class="mx-1">
-                        <img src="{{url('/svg/transparent-donut.svg')}}" width="25px" alt="" class="icon-white">
+                        <a href="#"> {{ $likes_count }}</a>
                     </div>
                     <div class="mx-1">
-                        <a href="#">Yum</a>
+                        <!-- <img src="{{url('/svg/transparent-donut.svg')}}" width="25px" alt="" class="icon-white"> -->
+                        <like-button post-id="{{ $post->id }}" liked="{{ $liked_post }}"></like-button>
                     </div>
+                    
                 </div>
                 <div class="d-flex">
                     <div class="mx-1">
-                        <i class="far fa-comments"></i>
+                        <a href="#">{{ $comments_count }}</a>
                     </div>
                     <div class="mx-1">
-                        <a href="#">Comment</a>
+                        <i class="far fa-comments"></i>
                     </div>
                 </div>
 

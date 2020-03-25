@@ -53,6 +53,10 @@ class PostsController extends Controller
         $post = $post->with('user.profile', 'comments.user')->where('id', $post->id)->first();
         $follows = (auth()->user()) ? auth()->user()->following->contains($post->user->id) : false;
         
-        return view('posts.show', compact('post', 'follows'));
+        $liked_post = (auth()->user()) ? auth()->user()->liked->contains($post) : false;
+        $likes_count = $post->likes->count();
+        $comments_count = $post->comments->count();
+
+        return view('posts.show', compact('post', 'follows', 'liked_post', 'likes_count', 'comments_count'));
     }
 }
