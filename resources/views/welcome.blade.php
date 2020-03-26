@@ -105,7 +105,7 @@
                       <ul class="list-group">
                         <li class="list-group-item group-bg">Brian Warfield</li>
                         <li class="list-group-item group-bg">Michael Li</li>
-                        <li class="list-group-item group-bg">Brendon Linthrust</li>
+                        <li class="list-group-item group-bg">Brendon Linthurst</li>
                         <li class="list-group-item group-bg">Gita Nikzad</li>
                       </ul>
                     </div>
