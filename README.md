@@ -37,6 +37,8 @@ Clicking the top right allows you to setup your profile. The profile page is the
 
 The Yum functions similar to likes. Users can click Yum to indicate that they like the food item.
 
+![Yumcomment](https://github.com/LiMichael1/ThunderBoltz/blob/master/resources/img/yumcomment.png?raw=true)
+
 Follow and Unfollow functions like normal social media applications.
 
 ![Userlist](https://github.com/LiMichael1/ThunderBoltz/blob/master/resources/img/userlist.png?raw=true))
