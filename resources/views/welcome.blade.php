@@ -112,7 +112,7 @@
                     <div class="col-6">
                       Photo Website for foodies to 
                       <ul class="list-group">
-                        <li class="list-group-item group-bg">Sharing what they're eating</li>
+                        <li class="list-group-item group-bg">Share what they're eating</li>
                         <li class="list-group-item group-bg">Follow other fellows</li>
                         <li class="list-group-item group-bg">Comment on the Food Photos</li>
                         <li class="list-group-item group-bg">Provide support to fellow fodoies by smashing that YUM button</li>
